@@ -1,0 +1,34 @@
+$color-black: #000;
+
+.header {
+  max-width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20rem;
+  box-shadow: 1rem 2rem 6rem rgba($color-black, .2);
+
+  &__text {
+    font-size: 3.4rem;
+  }
+}
+
+.modes {
+  width: 20rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &__text {
+    font-size: 2rem;
+    margin-left: 5px;
+  }
+
+  &__icon {
+    font-size: 2.4rem;
+  }
+}

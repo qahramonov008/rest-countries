@@ -1,0 +1,57 @@
+@mixin shrinkLabel {
+  top: 10px;
+  left: 3rem;
+  font-size: 1.3rem;
+  color: #777777d0;
+}
+
+.form-box {
+  margin: 5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 26rem;
+}
+
+.search-form {
+  position: relative;
+
+  &--input {
+    width: 45rem;
+    height: 7.6rem;
+    border: none;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    font-size: 2.3rem;
+    padding: 0 6rem;
+    border-radius: 10px;
+
+    &:focus ~ .search-form--label {
+      @include shrinkLabel();
+    }
+  }
+
+  &--icon {
+    font-size: 2rem !important;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    padding: 3rem 2rem;
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      background: #eeeeee54;
+      top: 0;
+      left: 0;
+    }
+  }
+  &--label {
+    position: absolute;
+    top: 2.7rem;
+    left: 5rem;
+    font-size: 1.6rem;
+    padding-left: 2rem;
+    color: #777;
+    transition: all 0.3s;
+  }
+}

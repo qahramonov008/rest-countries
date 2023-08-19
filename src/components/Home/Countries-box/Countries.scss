@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  align-items: center;
+}
+
+.countries {
+  margin-top: 5rem;
+  width: 150rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 35rem));
+  row-gap: 5rem;
+  justify-self: center;
+  justify-content: center;
+}
