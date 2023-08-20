@@ -9,10 +9,11 @@ const Country = ({ data }) => {
     population: data?.population,
     region: data?.region,
     capital: data?.capital,
+    key: data?.name
   };
 
   return (
-    <div className="country">
+    <div className="country" key={countriesData.key}>
       <div className="country__photo-box">
         <img
           src={countriesData.flag}

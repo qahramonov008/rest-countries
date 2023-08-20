@@ -1,13 +1,7 @@
-// import { useState } from "react";
 import "./Search.scss";
-// import Countries from "../Countries-box/Countries";
 
-const Search = ({ onSearchChange }) => {
-  // const [searchString, setSearchString] = useState('')
-
-  // const onSearchChange = (e) => {
-  //   setSearchString(e.target.value.toLowerCase())
-  // }
+const Search = ({ onSearchChange, searchString }) => {
+  console.log(searchString)
 
   return (
     <form className="search-form">
@@ -18,13 +12,11 @@ const Search = ({ onSearchChange }) => {
         type="search"
         name="search"
         id="search"
-        // onChange={onSearchChange()}
       />
-      <label className="search-form--label" htmlFor="search">
+      <label className={`search-form--label ${searchString.length ? "shrink" : ''}`} htmlFor="search">
         Search for a country...
       </label>
 
-      {/* <Countries searchString={searchString}/> */}
     </form>
   );
 };

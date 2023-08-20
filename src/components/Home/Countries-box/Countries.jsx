@@ -1,12 +1,16 @@
 import Country from "../Country/Country";
 import "./Countries.scss";
 
-const Countries = ({ searchedCountry }) => {
+const Countries = ({ searchedCountry, allRegions, valueRegion }) => {
   return (
     <div className="countries">
-      {searchedCountry !== null
+      {valueRegion !== "All"
+        ? allRegions[valueRegion].map((country) => (
+            <Country key={country.name} data={country} />
+          ))
+        : searchedCountry !== null
         ? searchedCountry.map((country) => (
-            <Country data={country} key={country.name.common} />
+            <Country data={country} key={country.name} />
           ))
         : null}
     </div>

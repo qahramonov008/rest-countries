@@ -55,3 +55,7 @@
     transition: all 0.3s;
   }
 }
+
+.shrink {
+  @include shrinkLabel();
+}
