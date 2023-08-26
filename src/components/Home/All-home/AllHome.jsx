@@ -12,7 +12,6 @@ const AllHome = () => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data);
       });
   }, []);
 
@@ -40,9 +39,7 @@ const AllHome = () => {
   allRegions.Europe.push(
     ...data.filter((country) => country.region === "Europe")
   );
-  allRegions.Asia.push(
-    ...data.filter((country) => country.region === "Asia")
-  );
+  allRegions.Asia.push(...data.filter((country) => country.region === "Asia"));
 
   const onSearchChange = (e) => {
     setSearchString(e.target.value.toLowerCase());
@@ -56,7 +53,11 @@ const AllHome = () => {
         setValueRegion={setValueRegion}
         searchString={searchString}
       />
-      <Countries searchedCountry={searchedCountry} allRegions={allRegions} valueRegion={valueRegion} />
+      <Countries
+        searchedCountry={searchedCountry}
+        allRegions={allRegions}
+        valueRegion={valueRegion}
+      />
     </div>
   );
 };

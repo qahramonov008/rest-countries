@@ -10,6 +10,7 @@ const Countries = ({ searchedCountry, allRegions, valueRegion }) => {
           ))
         : searchedCountry !== null
         ? searchedCountry.map((country) => (
+            
             <Country data={country} key={country.name} />
           ))
         : null}

@@ -1,4 +1,5 @@
-import "./Country.scss"
+import { Link } from "react-router-dom";
+import "./Country.scss";
 
 const Country = ({ data }) => {
   if (data === null) return;
@@ -9,11 +10,11 @@ const Country = ({ data }) => {
     population: data?.population,
     region: data?.region,
     capital: data?.capital,
-    key: data?.name
+    key: data?.name,
   };
 
   return (
-    <div className="country" key={countriesData.key}>
+    <Link to={`${countriesData.countryName}`} className="country" key={countriesData.key}>
       <div className="country__photo-box">
         <img
           src={countriesData.flag}
@@ -33,7 +34,7 @@ const Country = ({ data }) => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
