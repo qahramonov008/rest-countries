@@ -13,7 +13,7 @@ const Countries = ({ searchedCountry, allRegions, valueRegion, isDark }) => {
             
             <Country isDark={isDark} data={country} key={country.name} />
           ))
-        : <h1 className="error">No search results</h1>}
+        : <h1 className="error">country not found</h1>}
     </div>
   );
 };
