@@ -1,10 +1,10 @@
 import Header from './Header/Header'
 import { Outlet } from 'react-router-dom'
 
-const Home = () => {
+const Home = ( {isDark, setIsDark } ) => {
   return (
     <>
-        <Header />
+        <Header isDark={isDark} setIsDark={setIsDark}/>
         <Outlet />
     </>
   )

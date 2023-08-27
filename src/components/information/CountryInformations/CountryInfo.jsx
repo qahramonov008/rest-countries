@@ -1,5 +1,5 @@
 import "./CountryInfo.scss";
-const CountryInfo = ({ thisCountry }) => {
+const CountryInfo = ({ thisCountry, isDark }) => {
   if (thisCountry === null) return;
 
   const countryInfo = {
@@ -21,27 +21,57 @@ const CountryInfo = ({ thisCountry }) => {
     <div className="informations__country">
       <h1 className="informations__country--name">{countryInfo.countryName}</h1>
       <div className="informations__country--main">
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Native Name:
           <p className="informations__country--info">
             {countryInfo.nativeName}
           </p>
         </b>
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Population:
           <p className="informations__country--info">
             {countryInfo.population}
           </p>
         </b>
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Region:
           <p className="informations__country--info">{countryInfo.region}</p>
         </b>
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Sub Region:
           <p className="informations__country--info">{countryInfo.subRegion}</p>
         </b>
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Capital:
           <p className="informations__country--info">
             {countryInfo.capital !== undefined
@@ -52,11 +82,23 @@ const CountryInfo = ({ thisCountry }) => {
       </div>
 
       <div className="informations__country--sub">
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Top Level Domain:
           <p className="informations__country--info">{countryInfo.domain}</p>
         </b>
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Currencies:
           <p className="informations__country--info">
             {countryInfo.currencies !== undefined
@@ -64,7 +106,13 @@ const CountryInfo = ({ thisCountry }) => {
               : "Not found"}
           </p>
         </b>
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Languages:
           {countryInfo.languages.map((lang) => (
             <p className="informations__country--info" key={lang.name}>
@@ -75,16 +123,37 @@ const CountryInfo = ({ thisCountry }) => {
       </div>
 
       <div className="informations__country--borders">
-        <b className="informations__country--title">
+        <b
+          className={
+            isDark !== false
+              ? "informations__country--title"
+              : "informations__country--title informations__country--title__dark"
+          }
+        >
           Borders:
           {countryInfo.borders !== undefined ? (
             countryInfo.borders.map((border) => (
-              <p className="informations__country--border" key={border}>
+              <p
+                className={
+                  isDark !== false
+                    ? "informations__country--border"
+                    : "informations__country--border informations__country--border__dark"
+                }
+                key={border}
+              >
                 {border}
               </p>
             ))
           ) : (
-            <p className="informations__country--border">No borders yet</p>
+            <p
+              className={
+                isDark !== false
+                  ? "informations__country--border"
+                  : "informations__country--border informations__country--border__dark"
+              }
+            >
+              No borders yet
+            </p>
           )}
         </b>
       </div>

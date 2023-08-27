@@ -1,9 +1,9 @@
 import Container from "../Container/Container";
 
-const Details = ( { countryName }) => {
+const Details = ( { isDark }) => {
   return (
     <>
-      <Container countryName={countryName}/>
+      <Container isDark={isDark}/>
     </>
   );
 };

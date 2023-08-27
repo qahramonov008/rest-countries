@@ -1,10 +1,10 @@
 import "./Filter.scss";
 
-const Filter = ({ valueRegion, setValueRegion }) => {
+const Filter = ({ valueRegion, setValueRegion, isDark }) => {
   return (
     <div className="select-country">
       <select
-        className="select-country__dropdown"
+        className={isDark !== false ? "select-country__dropdown" : "select-country__dropdown select-country__dropdown__dark"}
         value={valueRegion}
         onChange={(e) => setValueRegion(e.target.value)}
       >

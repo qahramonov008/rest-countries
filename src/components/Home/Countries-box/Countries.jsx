@@ -1,19 +1,19 @@
 import Country from "../Country/Country";
 import "./Countries.scss";
 
-const Countries = ({ searchedCountry, allRegions, valueRegion }) => {
+const Countries = ({ searchedCountry, allRegions, valueRegion, isDark }) => {
   return (
     <div className="countries">
       {valueRegion !== "All"
         ? allRegions[valueRegion].map((country) => (
-            <Country key={country.name} data={country} />
+            <Country isDark={isDark} key={country.name} data={country} />
           ))
-        : searchedCountry !== null
+        : searchedCountry !== null && searchedCountry.length
         ? searchedCountry.map((country) => (
             
-            <Country data={country} key={country.name} />
+            <Country isDark={isDark} data={country} key={country.name} />
           ))
-        : null}
+        : <h1 className="error">No search results</h1>}
     </div>
   );
 };

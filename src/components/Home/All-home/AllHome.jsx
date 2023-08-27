@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Countries from "../Countries-box/Countries";
 import FormBox from "../Form/FormBox";
+import "./AllHome.scss";
 
-const AllHome = () => {
+const AllHome = ({ isDark }) => {
   const [searchString, setSearchString] = useState([]);
   const [valueRegion, setValueRegion] = useState("All");
   const [data, setData] = useState([]);
@@ -18,6 +19,8 @@ const AllHome = () => {
   const searchedCountry = data.filter((country) =>
     country.name.toLowerCase().includes(searchString)
   );
+
+  console.log(searchedCountry)
 
   const allRegions = {
     Americas: [],
@@ -46,14 +49,18 @@ const AllHome = () => {
   };
 
   return (
-    <div className="container">
+    <div
+      className={isDark !== false ? "container" : "container container__dark"}
+    >
       <FormBox
+        isDark={isDark}
         onSearchChange={onSearchChange}
         valueRegion={valueRegion}
         setValueRegion={setValueRegion}
         searchString={searchString}
       />
       <Countries
+        isDark={isDark}
         searchedCountry={searchedCountry}
         allRegions={allRegions}
         valueRegion={valueRegion}

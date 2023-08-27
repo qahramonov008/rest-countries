@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Country.scss";
 
-const Country = ({ data }) => {
+const Country = ({ data, isDark }) => {
   if (data === null) return;
 
   const countriesData = {
@@ -14,7 +14,7 @@ const Country = ({ data }) => {
   };
 
   return (
-    <Link to={`${countriesData.countryName}`} className="country" key={countriesData.key}>
+    <Link to={`${countriesData.countryName}`} className={isDark !== false ? 'country' : 'country country__dark'} key={countriesData.key}>
       <div className="country__photo-box">
         <img
           src={countriesData.flag}

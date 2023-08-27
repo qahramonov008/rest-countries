@@ -5,10 +5,10 @@ import CountryFlag from "../CountryFlag/CountryFlag";
 import CountryInfo from "../CountryInformations/CountryInfo";
 import { useParams } from "react-router-dom";
 
-const Container = () => {
+const Container = ({ isDark }) => {
   const [thisCountry, setThisCountry] = useState(null);
-  const { countryName } = useParams()
-  
+  const { countryName } = useParams();
+
   useEffect(() => {
     fetch(`https://restcountries.com/v2/name/${countryName}`)
       .then((res) => res.json())
@@ -18,10 +18,16 @@ const Container = () => {
   const dataThisCountry = thisCountry !== null ? thisCountry[0] : null;
   console.log(dataThisCountry);
   return (
-    <div className="container__country-details">
-      <BackBtn />
-      <CountryFlag thisCountry={dataThisCountry} />
-      <CountryInfo thisCountry={dataThisCountry} />
+    <div
+      className={
+        isDark !== false
+          ? "container__country-details"
+          : "container__country-details container__country-details__dark"
+      }
+    >
+      <BackBtn isDark={isDark}/>
+      <CountryFlag isDark={isDark} thisCountry={dataThisCountry} />
+      <CountryInfo isDark={isDark} thisCountry={dataThisCountry} />
     </div>
   );
 };
